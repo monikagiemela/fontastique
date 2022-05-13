@@ -1,0 +1,7 @@
+.DS_Store
+env/
+flask_session/
+__pycache__
+favicon.ico
+uploads/
+my_model_2.h5

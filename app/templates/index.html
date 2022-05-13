@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h5 class="fw-light">Have an image with text and you don’t know what the font is?
+    <br>Upload it, and we’ll find the fonts that match.</h5>
+    <br>
+         
+   <section>
+        <div>
+          <form class="dropzone" action="/" id="file-dropzone">
+            <div class="dz-message"><ion-icon name="cloud-upload"></ion-icon><br>  
+              <span>Drop a file here or click to upload</span>     
+            </div>
+            </form>
+        </div>
+    </section>
+  
+
+{% endblock %}
