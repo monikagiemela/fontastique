@@ -6,14 +6,18 @@
     <br>
          
    <section>
-        <div>
-          <form class="dropzone" action="/" id="file-dropzone">
-            <div class="dz-message"><ion-icon name="cloud-upload"></ion-icon><br>  
-              <span>Drop a file here or click to upload</span>     
-            </div>
-            </form>
+        <form accept="image/.jpeg,.jpg,.png" action="/" id="file-dropzone" class="dropzone">
+        <div class="dz-message"><ion-icon name="cloud-upload"></ion-icon><br>  
+            <span>Drop a file here or click to upload</span>     
         </div>
-    </section>
-  
+        </form>
+    </section> 
+    <br><br>
 
+    <section>
+        <h5 class="fw-light" id="max-result"></h5>
+        <br>
+        <h5 class="fw-light" id="top-three-header"></h5>
+        <h6 class="fw-light" id="top-three-result"></h6>
+    </section>
 {% endblock %}

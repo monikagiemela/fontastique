@@ -9,51 +9,11 @@
 .yellow {
     color: #f7ff14;
 }
-
-.box-btn {
-    font-size: 16px;
-    font-weight: 550;
-    background-color: #ffffff;
-    color: #020202;
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 36px;
-    border: 2px solid #bfa2f3;
-    border-radius: 20px;
-    margin-top: 30px;
-    transition-duration: 0.4s;
-}
-.box-btn:hover {
-    background-color:#bfa2f3;
-    color: #ffffff;
-}
-.btn-large {
-    width: 96%;
-    left: 2px;
-    right: 2px;
-}
-
 body {
     background-color: #fff;
     color: #535658;
     font-family:'Open Sans', sans-serif;
     text-decoration: none;
-}
-button:visited {
-    color: #020202;
-    background-color: #fff;
-}
-.container {
-    font-size: 15px;
-    margin: 0%;
-    max-width: 930px;
-    margin: 0 auto; 
-    width: 100%;   
-}
-#odd-container {
-    background-color: #f3f3f3;
-  
-    width: 100%;
 }
 img {
     height: 210px;
@@ -61,82 +21,18 @@ img {
     padding: 2px;
     width: 200px;
 }
-.simple_a {
-    color:#020202;
-}
-.simple_a:link {
-    color: #020202;
-}
-.simple_a:hover {
-    color: #020202;
-    font-weight: bold;
-}
-ul.no-bullets {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
-}
-.topright {
-    top: 120px;
-    right: 16px;
-}
 
-/**--------- PRODUCT PAGE GRID -------**/
-.boxes .container-product-page {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-.box-product-page {
-    text-align: justify;
-    padding: 20px;
-    width: 50%;
-    min-width: 370px;    
-}
-.box-product-page img {
-    margin: 2px;
-    padding: 2px;
-    width: 100%;
-    height: auto;
-}
 /**--------- NAVBAR -----------**/
 .navbar-custom {
     background-color: lightgreen;
 }
 .navbar-brand {
-    /*font-family: 'Leckerli One', cursive;*/
     font-family: 'Fredoka One', cursive;
     letter-spacing: 2px;
     font-size: 30px;
 }
 
 /** ------------ FOOTER ------------- **/
-/** ------------ DIAGONAL BUTTON ------------- **/
-.diagonal {
-    position: relative;
-    line-height: 50px;
-    background: transparent;
-    color: #000;
-    border: 1px solid;
-    font-weight: 700;
-    font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
-    overflow: hidden; 
-    text-align: center;
-    background-image: linear-gradient(123deg, #f7ff14 50%, transparent 50%);
-    background-size: 250% 110%;
-    background-position: right bottom;
-    transition: background-position .7s ease;
-    width: 250px;
-        
-    }
-        
-.diagonal:hover {
-    background-position: left top;
-    color: #000;
-}
-
 /** ---------- FILE DROP ZONE -----------**/
 .dropzone {
 margin: auto;
@@ -156,21 +52,18 @@ border: 5px dashed #f7ff14;
 border-radius: 10px;
 box-shadow: 0px 2px 20px 0px #f2f2f2;       
 }
- 
 .dropzone--over {
 border-style: solid;
 }
-
 .data-dz-thumbnail {
-width: 40%;
-height: 40%;
+width: 200px;
+height: 200px;
 border-radius: 10px;
 overflow: hidden;
 background-color: #cccccc;
 background-size: cover;
-position: relative;
+position: absolute;
 }
-
 .data-dz-thumbnail::after {
 content: attr(data-label);
 position: absolute;
@@ -187,4 +80,3 @@ ion-icon {
    font-size: 50px;
     margin-bottom: 6px;
   }
-

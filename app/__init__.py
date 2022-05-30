@@ -1,11 +1,11 @@
 import os
-from os.path import join, dirname, realpath
 from dotenv import load_dotenv 
 
 from flask import Flask
 from flask_session import Session
 #from flask_sqlalchemy import SQLAlchemy
 #from flask_mail import Mail
+from flask_dropzone import Dropzone
 
 load_dotenv()
 
@@ -25,8 +25,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure file upload folder
 app.config["UPLOAD_PATH"] = os.path.join("app", "static", "uploads")
 app.config["MAX_CONTENT_LENGTH"] = 2 * 1024 * 1024
-app.config["ALLOWED_EXTENSIONS"] = ["jpg", "jpeg", "pdf", "png", "gif"]
-
+app.config["ALLOWED_EXTENSIONS"] = [".jpg", ".jpeg", ".png"]
 
 # Configure email services
 # Requires that "Less secure app access" be on
@@ -46,10 +45,6 @@ app.jinja_env.lstrip_blocks = True
 # Configure database
 #app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///fontastic.db'
 #db = SQLAlchemy(app)
-
-@app.errorhandler(413)
-def too_large(e):
-    return "File is too large", 413
 
 from app.index import index
 #from app import models

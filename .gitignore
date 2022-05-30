@@ -1,7 +1,9 @@
 .DS_Store
+.vscode/
 env/
-flask_session/
 __pycache__
-favicon.ico
+flask_session/
 uploads/
 my_model_2.h5
+FontClassificationModel2.py
+FontClassificationModel3.py
