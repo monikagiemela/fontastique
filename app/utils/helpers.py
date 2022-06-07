@@ -24,8 +24,8 @@ def apology(message, code=400):
         return s
     return render_template("apology.html", top=code, bottom=escape(message)), code
 
+model = keras.models.load_model(os.path.join("app", "static", "my_model_3_3.h5"))
 
-model = keras.models.load_model(os.path.join("app", "static", "my_model_2_5.h5"))
 def predict(filename, model=model) -> tuple:
     """Predict font"""
     img = tf.keras.utils.load_img(os.path.join("app", "static", "uploads", 
@@ -36,20 +36,20 @@ def predict(filename, model=model) -> tuple:
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
     
-    max_result: str = class_names[np.argmax(score)]
-    print(f"This image most likely belongs to {class_names[np.argmax(score)]} \
+    max_result: str = class_names[np.argmax(score, axis=-1)]
+    print(f"This image most likely belongs to {max_result} \
             with a {100 * np.max(score):.2f} percent confidence.")
 
-    ind: list = np.argpartition(score, -4)[-4:-1]
-    top_three: list = []
+    ind: list = np.argpartition(score, -4)[-4:]
+    top_four: list = []    
     
     print("Top three:")
     for i in ind:
-        top_three.append(class_names[i])
-        print(class_names[i], score[i].numpy())    
-    return (max_result, top_three)
+        top_four.append(class_names[i])
+        print(class_names[i], score[i].numpy())
+    return (max_result, top_four)
 
-def validate_image(stream):
+def validate_image(stream) -> str:
     """Use file bytes to validate if the image format is the same as its extension """
     header = stream.read(512)
     stream.seek(0)

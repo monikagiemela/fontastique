@@ -5,19 +5,28 @@
     <br>Upload it, and we’ll find the fonts that match.</h5>
     <br>
          
-   <section>
-        <form accept="image/.jpeg,.jpg,.png" action="/" id="file-dropzone" class="dropzone">
+    <section>
+        <form accept="image/.jpeg,.jpg,.png,.pdf" action="/" id="file-dropzone" class="dropzone">
         <div class="dz-message"><ion-icon name="cloud-upload"></ion-icon><br>  
-            <span>Drop a file here or click to upload</span>     
+            <span>Drag & Drop your image here or click to identify your font!</span>     
         </div>
         </form>
     </section> 
     <br><br>
-
-    <section>
-        <h5 class="fw-light" id="max-result"></h5>
+    <div id="try-another"></div>
+    <br>
+    
+    <h5 class="fw-light" id="max-result"></h5>
+    
+    <section class="container" id="results">
+        
         <br>
         <h5 class="fw-light" id="top-three-header"></h5>
-        <h6 class="fw-light" id="top-three-result"></h6>
-    </section>
+        <div class="row gy-5 gx-5" id="top-results">   
+        </div>
+            <section id="generated-text"></section>
+            <br>
+            <h6 class="fw-light" id="top-three-result"></h6>
+        <br>
+    </section>      
 {% endblock %}

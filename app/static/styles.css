@@ -16,10 +16,10 @@ body {
     text-decoration: none;
 }
 img {
-    height: 210px;
+    height: 150px;
     margin: 2px;
     padding: 2px;
-    width: 200px;
+    width: 250px;
 }
 
 /**--------- NAVBAR -----------**/
@@ -34,10 +34,22 @@ img {
 
 /** ------------ FOOTER ------------- **/
 /** ---------- FILE DROP ZONE -----------**/
+#button-confirm {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 3px;
+    background-color: #e714ff;
+    border: 5px solid #e714ff;
+    border-radius: 25px;
+    font-weight: 300;
+    z-index: 9999;
+}
+
 .dropzone {
 margin: auto;
-max-width: 300px;
-height: 250px;
+max-width: 400px;
+height: 350px;
 padding: 25px;
 display: flex;
 align-items: center;
@@ -76,7 +88,39 @@ background: rgba(0, 0, 0, 0.75);
 font-size: 14px;
 text-align: center    
 }
+#editor {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: 9999;
+   background-color: #000; 
+}
 ion-icon {
    font-size: 50px;
     margin-bottom: 6px;
-  }
+}
+
+/** ---------- RESULTS -----------**/
+#try-another-button {
+    position: relative;
+    left: 50;
+    top: 40;
+    padding: 3px;
+    z-index: 9999;
+    background-color: #e714ff;
+    border: 5px solid #e714ff;
+    border-radius: 25px;
+    font-weight: 400;
+}
+.card {
+    width: 300px;
+}
+
+#results {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    padding: 25px;
+}
