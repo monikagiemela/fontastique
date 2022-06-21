@@ -8,10 +8,10 @@ Dropzone.options.fileDropzone = {
   clickable: true,
   success: function(file, responseText) {
     console.log(responseText.url0);
-    document.getElementById("max-result").innerHTML = "This font most likely belongs to: " + responseText.max_result;
+    //document.getElementById("max-result").innerHTML = "This font most likely belongs to: " + responseText.max_result;
     document.getElementById("top-three-header").innerHTML = "You might like these fonts:";
     var topFourResultsDiv = document.getElementById("top-results");
-    for (var i=0; i<(responseText.top_four).length; i++){
+    for (var i=0; i<(responseText.top_six).length; i++){
       var col = document.createElement("div");
       col.setAttribute("class", "col");
       topFourResultsDiv.appendChild(col);
@@ -20,8 +20,7 @@ Dropzone.options.fileDropzone = {
       col.appendChild(card);
       var img= document.createElement("img");
       img.setAttribute("class", "card-img-top");
-      img.setAttribute("alt", responseText.top_four[i]);
-      //img.setAttribute("src", responseText.url+i;
+      img.setAttribute("alt", responseText.top_six[i]);
       img.setAttribute("id", i);
       card.appendChild(img);
       var cardBody = document.createElement("div");
@@ -29,23 +28,21 @@ Dropzone.options.fileDropzone = {
       card.appendChild(cardBody);
       var cardText = document.createElement("p");
       cardText.setAttribute("class", "card-text");
+      cardText.innerHTML = responseText.top_six[i];
       cardBody.appendChild(cardText);
     }
     var img0 = document.getElementById("0");
     var img1 = document.getElementById("1");
     var img2 = document.getElementById("2");
     var img3 = document.getElementById("3");
+    var img4 = document.getElementById("4");
+    var img5 = document.getElementById("5");
     img0.setAttribute("src", responseText.url0);
     img1.setAttribute("src", responseText.url1);
     img2.setAttribute("src", responseText.url2);
     img3.setAttribute("src", responseText.url3);
-
-    // Create img tag
-    //var generatedTextSection = document.querySelector("#generated-text");
-    //var imgTag = document.createElement("img");
-    //imgTag.setAttribute("src", responseText.url);
-    //imgTag.setAttribute("alt", "This is Fontastique!");
-    //generatedTextSection.appendChild(imgTag);
+    img4.setAttribute("src", responseText.url4);
+    img5.setAttribute("src", responseText.url5);
     
     // Create TryAnother prediction button
     var tryAnotherDiv = document.querySelector("#try-another");
@@ -64,7 +61,6 @@ Dropzone.options.fileDropzone = {
       // Create the image editor overlay
       var editor = document.createElement("div");
       editor.setAttribute("id", "editor");
-
       document.body.appendChild(editor);
       
       // Create confirm button at the top left of the viewport
@@ -76,10 +72,13 @@ Dropzone.options.fileDropzone = {
         // Get the output file data from Croppie
         croppie.result({
           type:"blob",
-          //size: {
-          //  width: ,
+          
+          size: "original"
+          //{
+          //  width: 105,
           //  height: 105
           //}
+
         }).then(function(blob) {
         
           // Create a new Dropzone file thumbnail
@@ -100,7 +99,6 @@ Dropzone.options.fileDropzone = {
  
         // Remove the editor from view
         editor.parentNode.removeChild(editor);
-
       });
       
       // Create the Croppie editor
@@ -111,8 +109,5 @@ Dropzone.options.fileDropzone = {
       croppie.bind({
         url: URL.createObjectURL(file)
       });
-
   }
-
-
 };

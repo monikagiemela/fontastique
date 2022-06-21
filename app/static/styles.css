@@ -3,6 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+a {
+    color: #535658;
+    text-decoration: none; 
+}
+a:hover {
+    color: #535658;
+    text-decoration: none;
+    font-weight: bold;
+  }
 .purple {
     color: #e714ff;
 }
@@ -15,12 +24,7 @@ body {
     font-family:'Open Sans', sans-serif;
     text-decoration: none;
 }
-img {
-    height: 150px;
-    margin: 2px;
-    padding: 2px;
-    width: 250px;
-}
+
 
 /**--------- NAVBAR -----------**/
 .navbar-custom {
@@ -33,6 +37,17 @@ img {
 }
 
 /** ------------ FOOTER ------------- **/
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+    position: fixed;
+}
 /** ---------- FILE DROP ZONE -----------**/
 #button-confirm {
     position: absolute;
@@ -116,6 +131,9 @@ ion-icon {
 }
 .card {
     width: 300px;
+}
+.card-img-top {
+    height: 105px;
 }
 
 #results {
