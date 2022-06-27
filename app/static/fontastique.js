@@ -8,8 +8,7 @@ Dropzone.options.fileDropzone = {
   clickable: true,
   success: function(file, responseText) {
     console.log(responseText.url0);
-    //document.getElementById("max-result").innerHTML = "This font most likely belongs to: " + responseText.max_result;
-    document.getElementById("top-three-header").innerHTML = "You might like these fonts:";
+    document.getElementById("top-six-header").innerHTML = "You might like these fonts:";
     var topFourResultsDiv = document.getElementById("top-results");
     for (var i=0; i<(responseText.top_six).length; i++){
       var col = document.createElement("div");
@@ -20,7 +19,7 @@ Dropzone.options.fileDropzone = {
       col.appendChild(card);
       var img= document.createElement("img");
       img.setAttribute("class", "card-img-top");
-      img.setAttribute("alt", responseText.top_six[i]);
+      img.setAttribute("alt", responseText.top_six[i][0]);
       img.setAttribute("id", i);
       card.appendChild(img);
       var cardBody = document.createElement("div");
@@ -28,7 +27,7 @@ Dropzone.options.fileDropzone = {
       card.appendChild(cardBody);
       var cardText = document.createElement("p");
       cardText.setAttribute("class", "card-text");
-      cardText.innerHTML = responseText.top_six[i];
+      cardText.innerHTML = `${responseText.top_six[i][0]} (Probability: ${(parseFloat(responseText.top_six[i][1])*1000).toFixed(2)}%)`;
       cardBody.appendChild(cardText);
     }
     var img0 = document.getElementById("0");

@@ -9,13 +9,13 @@ This project is a convolutional neural network trained to classify and recognize
 different categories of fonts. I used a dataset of 100 types of fonts to train my model.
 Project is implemented in Python with Tensorflow.
 The project is broken down into multiple steps:
-- Generating the dataset of fonts from package
-- Loading and preprocessing the dataset
+- Generating training, validation and testing dataset of fonts from the TRDG package
+- Loading and preprocessing datasets
 - Visualization of samples from the dataset
 - Training the Convolutional Neural Network on a dataset
-- Testing the model on 5500 images showed over 90% accuracy of the final model
+- Testing the model on 5500 images (testing showed over 90% accuracy of the final model)
 - Creating a web application with Flask framework
-- Using the trained model to predict fonts in new images
+- Using the trained model to predict fonts from new images
 
 ## Dataset Description
 
@@ -38,16 +38,22 @@ Cropping was done during dataset loading with Tensorflow Keras.
 
 ## Files Description
 
-- **data_denerator** contains Text Recognition Data Generator package.
-- **FontClassificationModel.py** contains images preprocessing, detasets loading, 
+- **training > data_denerator** contains modified Text Recognition Data Generator package.
+- **training > FontClassificationModel.py** contains images preprocessing, detasets loading, 
 Tensorflow Keras Sequential model.
+- **training > model_testing > Classification_report.ipynb** contains Jupyter 
+notebook with script that predicts on the 5500 images and creates a 
+Scikit-learn classification report.
+- **training > model_testing.ipynb** contains Jupyter notebook with script that 
+predicts on a single picture.
 - **app** folder contains scripts for Flask application
 
 ## Installation
 
- Packages that are required are Tensorflow,Numpy, MatplotLib, PIL, Scikit-image, and Tensorflow. 
+- Packages required by model training: Tensorflow, Numpy, Pandas, Scikit-learn, Pillow, and tqdm. 
+- Packages required bt the app: Flask, Flask-Session, Werkzeug, 
 
-## GPU/CPU
+## GPU/CPU Usage
 
 - **FontClassificationModel.py** script uses GPU for model training.
-- **app** scipts use CPU for single image prediction.
+- **app** scripts use CPU for single image prediction.

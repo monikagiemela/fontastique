@@ -24,8 +24,6 @@ body {
     font-family:'Open Sans', sans-serif;
     text-decoration: none;
 }
-
-
 /**--------- NAVBAR -----------**/
 .navbar-custom {
     background-color: lightgreen;
@@ -35,7 +33,6 @@ body {
     letter-spacing: 2px;
     font-size: 30px;
 }
-
 /** ------------ FOOTER ------------- **/
 footer {
     bottom: 0;
@@ -60,48 +57,47 @@ footer {
     font-weight: 300;
     z-index: 9999;
 }
-
 .dropzone {
-margin: auto;
-max-width: 400px;
-height: 350px;
-padding: 25px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-font-family: 'Open Sans', sans-serif;
-font-weight: 400;
-font-size: 20px;
-cursor: pointer;
-color: #cccccc;
-border: 5px dashed #f7ff14;
-border-radius: 10px;
-box-shadow: 0px 2px 20px 0px #f2f2f2;       
+    margin: auto;
+    max-width: 400px;
+    height: 350px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 5px dashed #f7ff14;
+    border-radius: 10px;
+    box-shadow: 0px 2px 20px 0px #f2f2f2;      
 }
 .dropzone--over {
-border-style: solid;
+    border-style: solid;
 }
 .data-dz-thumbnail {
-width: 200px;
-height: 200px;
-border-radius: 10px;
-overflow: hidden;
-background-color: #cccccc;
-background-size: cover;
-position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: absolute;
 }
 .data-dz-thumbnail::after {
-content: attr(data-label);
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-padding: 5px 0;
-color: #ffffff;
-background: rgba(0, 0, 0, 0.75);
-font-size: 14px;
-text-align: center    
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center; 
 }
 #editor {
    position: fixed;
@@ -134,8 +130,8 @@ ion-icon {
 }
 .card-img-top {
     height: 105px;
+    width: auto;
 }
-
 #results {
     justify-content: center;
     display: flex;

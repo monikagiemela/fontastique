@@ -2,9 +2,12 @@ import os
 
 def change_name(folder):
     """
-    Change names of files recursively
+    Change names of files recursively.
+    Can be used with trgd (Text Generator) package to change name of files generated
+    by the trdg to custom names.
     
-    Used with trgd (Text Generator) package.
+    :param folder: path to folder that contains subfolders with files
+    "
     """
     for path, _, files in os.walk(folder):
         for filename in files:

@@ -30,13 +30,13 @@ def predict(filename: str, model=model) -> tuple:
     print(f"This image most likely belongs to {max_result} \
             with a {100 * np.max(score):.2f} percent confidence.")
 
-    ind: list = np.argpartition(score, -6)[-6:]
+    individual_predictions: list = np.argpartition(score, -6)[-6:]
     top_six: list = []    
     
-    print("Top three:")
-    for i in ind:
-        top_six.append(class_names[i])
-        print(class_names[i], score[i].numpy())
+    print("Top six:")
+    for prediction in individual_predictions:
+        top_six.append((class_names[prediction], str(score[prediction].numpy())))
+        print(class_names[prediction], score[prediction].numpy())
     return (max_result, top_six)
 
 def validate_image(stream) -> str:

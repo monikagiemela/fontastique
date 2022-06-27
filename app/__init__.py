@@ -1,10 +1,6 @@
 import os
-from dotenv import load_dotenv 
-
 from flask import Flask
 from flask_session import Session
-
-load_dotenv()
 
 app = Flask(__name__)
 
