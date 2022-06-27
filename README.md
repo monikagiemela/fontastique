@@ -57,7 +57,7 @@ predicts on a single picture.
     - **utils > helpers.py** - contains prediction function
     - **index.py** function for the landing page
     - **__init__.py** - app configuration
-    - **run.py** - code starter
+- **run.py** - app starter
 
 
 
