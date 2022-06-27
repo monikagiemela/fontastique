@@ -43,10 +43,23 @@ Cropping was done during dataset loading with Tensorflow Keras.
 Tensorflow Keras Sequential model.
 - **training > model_testing > Classification_report.ipynb** contains Jupyter 
 notebook with script that predicts on the 5500 images and creates a 
-Scikit-learn classification report.
+Scikit-learn Classification Report.
 - **training > model_testing.ipynb** contains Jupyter notebook with script that 
 predicts on a single picture.
-- **app** folder contains scripts for Flask application
+
+- **app** folder contains scripts for Flask application, including:
+    - **static > top_model.h5** trained Convolutional Neural Network model 
+    - **HTML templates**
+    - **static > fontastique.js** -Javascript file which implements drag&drop zone and picture cropper
+    and sending cropped picture to the server
+    - **static > styles.css** - css styles
+    - **static > output** - samples of fonts to be showed to user after prediction
+    - **utils > helpers.py** - contains prediction function
+    - **index.py** function for the landing page
+    - **__init__.py** - app configuration
+    - **run.py** - code starter
+
+
 
 ## Installation
 
